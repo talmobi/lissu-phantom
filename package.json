@@ -6,7 +6,6 @@
   "scripts": {
     "start": "node demo/server-demo.js",
     "piper": "npm start | node pipe.js",
-    "direct": "channel=streamerhouse phantomjs --web-security=no index.phantom.js",
     "test": "mocha test/basic-test.js",
     "test-all": "mocha test/*.js"
   },
@@ -16,29 +15,26 @@
     "request": "^2.69.0",
     "socket.io": "^1.4.5"
   },
-  "name": "twitch-webchat",
-  "version": "0.0.3",
-  "description": "consume twitch chat web version (non IRC). Same that non-registered users see. No auth required.",
+  "name": "lissu-dom-grabber ",
+  "version": "0.0.0",
+  "description": "consume lissu.tampere.fi web bus positions (the web dom, not API)",
   "main": "twitch-webchat.js",
   "directories": {
     "test": "test"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/talmobi/twitch-webchat-logger.git"
+    "url": ""
   },
   "keywords": [
-    "twitch",
-    "web",
-    "chat",
-    "log",
-    "logger",
+    "dom",
+    "jquery",
     "phantomjs"
   ],
   "author": "talmobi <talmo.christian@gmail.com> (http://jin.fi)",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/talmobi/twitch-webchat-logger/issues"
+    "url": ""
   },
-  "homepage": "https://github.com/talmobi/twitch-webchat-logger#readme"
+  "homepage": ""
 }

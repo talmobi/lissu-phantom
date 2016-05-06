@@ -24,6 +24,8 @@ function start (opts, callback) {
     interval = opts.interval || 1000;
   }
 
+  channel = "blah";
+
   var env = {
     channel: channel,
     interval: interval
@@ -72,6 +74,25 @@ function start (opts, callback) {
     callback(err, null);
   });
 
+  var exit = function exit () {
+    spawn.stdin.pause();
+    spawn.kill();
+    callback(null, {
+      type: 'status',
+      message: "kill requested"
+    });
+  };
+
+  process.on('exit', function () {
+    exit();
+  });
+  process.on('SIGINT', function () {
+    exit();
+  });
+  process.on('uncaughtException', function () {
+    exit();
+  });
+
   // return api
   return {
     // expose spawn
@@ -88,6 +109,8 @@ function start (opts, callback) {
     }
   };
 };
+
+
 
 if (module !== 'undefined' && module.exports) {
   module.exports = {

@@ -87,20 +87,6 @@ page.open(address, function (status) {
         };
 
         return JSON.stringify(list);
-
-        var data = [];
-        for (var i = 0; i < messages.length; i++) {
-          var node = messages[i];
-          var attr = node.attributes;
-          data.push(attr);
-        };
-
-        // remove processed info from the DOM
-        messages.remove();
-
-        // return the data back to our script context
-        // (outside of page.evaluate)
-        return data;
       });
 
       console.log(typeof data);
